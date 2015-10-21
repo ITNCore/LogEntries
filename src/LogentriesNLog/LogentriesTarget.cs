@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using LogentriesCore.Net;
 using NLog.Common;
 using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
-
-using LogentriesCore.Net;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace NLog.Targets
 {

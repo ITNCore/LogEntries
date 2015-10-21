@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "LogentriesLog4net Class Library",
+  "authors": [ "nick" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "LogentriesCore": "0.0.1-*",
+    "log4net": "2.0.3"
+  },
+
+  "frameworks": {
+    "net4": { },
+    "dnx4": { },
+    "net40": { },
+    "net40-client": { },
+    "net40-full": { },
+    "net403": { },
+    "dnx403": { },
+    "net45": { },
+    "dnx45": { },
+    "net451": { },
+    "dnx451": { },
+    "net452": { },
+    "dnx452": { },
+    "net46": { },
+    "dnx46": { }
+  }
+}

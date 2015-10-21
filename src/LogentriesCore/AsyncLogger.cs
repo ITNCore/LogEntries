@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Azure;
+using System;
 using System.Collections;
 using System.Configuration;
 using System.Diagnostics;
@@ -7,17 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Text.RegularExpressions;
-
-#if NET4_0
-    using Microsoft.Azure;
-#endif
+using System.Security;
+using System.Collections.Concurrent;
 
 namespace LogentriesCore.Net
 {
-    using System.Security;
-    using System.Collections.Concurrent;
-    using Microsoft.Azure;
-    
     public class AsyncLogger
     {
         #region Constants

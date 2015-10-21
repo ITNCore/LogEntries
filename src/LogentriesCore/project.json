@@ -1,0 +1,92 @@
+﻿{
+  "title": "ITNCore.LogEntries",
+  "version": "0.0.1-*",
+  "summary": "ITN Core library for LogEntries.",
+  "description": "ITN Core library for LogEntries.",
+  "authors": [ "Independent Television News", "Nick Moores" ],
+  "tags": [ "" ],
+  "projectUrl": "https://github.com/ITNCore/LogEntries",
+  "licenseUrl": "",
+  "dependencies": {
+    "Microsoft.WindowsAzure.ConfigurationManager": "3.1.0"
+  },
+
+  "frameworks": {
+    
+    "net4": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "dnx4": {
+      "dependencies": {
+        "System.Configuration.Abstractions": "2.0.2.24"
+      }
+    },
+    "net40": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "net40-client": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "net40-full": {
+      "frameworkAssemblies": {
+        "System.Configuration":  "4.0.0.0"
+      }
+    },
+    "net403": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "dnx403": {
+      "dependencies": {
+        "System.Configuration.Abstractions": "2.0.2.24"
+      }
+    },
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "dnx45": {
+      "dependencies": {
+        "System.Configuration.Abstractions": "2.0.2.24"
+      }
+    },
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "dnx451": {
+      "dependencies": {
+        "System.Configuration.Abstractions": "2.0.2.24"
+      }
+    },
+    "net452": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "dnx452": {
+      "dependencies": {
+        "System.Configuration.Abstractions": "2.0.2.24"
+      }
+    },
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Configuration": "4.0.0.0"
+      }
+    },
+    "dnx46": {
+      "dependencies": {
+        "System.Configuration.Abstractions": "2.0.2.24"
+      }
+    }
+  }
+}
