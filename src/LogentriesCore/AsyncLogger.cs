@@ -465,47 +465,6 @@ namespace LogentriesCore.Net
             return true;
         }
 
-        /* Retrieve configuration settings
-         * Will check Enviroment Variable as the last fall back.
-         * 
-         */
-        private string retrieveSetting(String name)
-        {
-            string cloudconfig = null;
-            if (Environment.OSVersion.Platform == PlatformID.Unix)
-            {
-                cloudconfig = ConfigurationManager.AppSettings.Get(name);
-            }
-            else
-            {
-                cloudconfig = CloudConfigurationManager.GetSetting(name);
-            }
-
-
-            
-            if (!String.IsNullOrWhiteSpace(cloudconfig))
-            {
-                WriteDebugMessages(String.Format("Found Cloud Configuration settings for {0}", name));
-                return cloudconfig;
-            }
-
-            var appconfig = ConfigurationManager.AppSettings[name];
-            if (!String.IsNullOrWhiteSpace(appconfig))
-            {
-                WriteDebugMessages(String.Format("Found App Settings for {0}", name));
-                return appconfig;
-            }
-
-            var envconfig = Environment.GetEnvironmentVariable(name);
-            if (!String.IsNullOrWhiteSpace(envconfig))
-            {
-                WriteDebugMessages(String.Format("Found Enviromental Variable for {0}", name));
-                return envconfig;
-            }
-            WriteDebugMessages(String.Format("Unable to find Logentries Configuration Setting for {0}.", name));
-            return null;
-        }
-
         /*
          * Use CloudConfigurationManager with .NET4.0 and fallback to System.Configuration for previous frameworks.
          * 
@@ -524,7 +483,7 @@ namespace LogentriesCore.Net
                 if (GetIsValidGuid(m_Token))
                     return true;
 
-                var configToken = retrieveSetting(LegacyConfigTokenName) ?? retrieveSetting(ConfigTokenName);
+                var configToken = Configuration.GetSettingValue(LegacyConfigTokenName) ?? Configuration.GetSettingValue(ConfigTokenName);
 
                 if (!String.IsNullOrEmpty(configToken) && GetIsValidGuid(configToken))
                 {
@@ -538,13 +497,13 @@ namespace LogentriesCore.Net
             if (m_AccountKey != "" && GetIsValidGuid(m_AccountKey) && m_Location != "")
                 return true;
 
-            var configAccountKey = retrieveSetting(LegacyConfigAccountKeyName) ?? retrieveSetting(ConfigAccountKeyName);
+            var configAccountKey = Configuration.GetSettingValue(LegacyConfigAccountKeyName) ?? Configuration.GetSettingValue(ConfigAccountKeyName);
 
             if (!String.IsNullOrEmpty(configAccountKey) && GetIsValidGuid(configAccountKey))
             {
                 m_AccountKey = configAccountKey;
 
-                var configLocation = retrieveSetting(LegacyConfigLocationName) ?? retrieveSetting(ConfigLocationName);
+                var configLocation = Configuration.GetSettingValue(LegacyConfigLocationName) ?? Configuration.GetSettingValue(ConfigLocationName);
 
                 if (!String.IsNullOrEmpty(configLocation))
                 {
